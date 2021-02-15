@@ -10,7 +10,8 @@
     <packaging>jar</packaging>
 
     <name>jmemcached-server</name>
-    <url>http://devstudy.net</url>
+    <!-- FIXME change it to the project's website -->
+    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,27 +35,18 @@
         </pluginManagement>
         <plugins>
             <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
                 <executions>
                     <execution>
-                        <phase>package</phase>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
                         <goals>
-                            <goal>attached</goal>
+                            <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <appendAssemblyId>false</appendAssemblyId>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <finalName>jmemcached-server-production-${project.version}</finalName>
-                    <archive>
-                        <manifest>
-                            <mainClass>net.devstudy.jmemcached.server.CLI</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -89,4 +81,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>
