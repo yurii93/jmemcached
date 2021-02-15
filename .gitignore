@@ -1,11 +1,3 @@
-jmemcached-client/.idea
-jmemcached-client/target
-jmemcached-client/*.iml
-
-jmemcached-common/.idea
-jmemcached-common/target
-jmemcached-common/*.iml
-
-jmemcached-server/.idea
-jmemcached-server/target
-jmemcached-server/*.iml
+.idea
+target
+*.iml
